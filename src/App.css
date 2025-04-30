@@ -1,38 +1,471 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: 0.2s ease-in-out;
+    color: #000;
+    text-decoration: none;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #FDF8F5 !important;
+    font-family: 'Amiri', sans-serif;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Nav section starts */
+.navbar {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    background-color: #E4CEAE;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand img {
+    height: 80px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-nav .nav-link {
+    color: #6c757d;
+    font-size: 22px;
+    margin-left: 70px;
+    font-family: 'Amiri', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-nav .nav-link:hover {
+    color: #8E6D42;
+}
+
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        background-color: white;
+        border: 2px solid #ECBF5D;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Nav section ends */
+/* Top Section */
+.hero-section {
+    background-color: transparent;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+}
+
+.card-min-width {
+    min-width: 350px;
+}
+
+/* Main Card */
+.hero-card {
+    background-color: #e9e7e7;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 90%;
+    max-width: 600px;
+    font-size: 13px;
+}
+
+/* Inside Card Layout */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero {
+    text-align: right;
+    padding: 40px;
+    width: 50%;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.custom-scroll {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-btn {
+    border: 2px solid #7F5A2D;
+    /* Green border */
+    color: #4CAF50;
+    /* Green text */
+    background-color: transparent;
+    /* Transparent by default */
+    transition: 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #D2B898;
+    /* Fill green on hover */
+    color: white;
+    /* Make icon/text white on hover */
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+        padding: 10px 60px;
+    }
+
+    .navbar-brand {
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*logo size*/
+    .navbar-brand img {
+        height: 80px;
+    }
+}
+
+
+/* img */
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.image-container {
+    position: relative;
+    width: 48%;
+    margin: 0 1%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* img */
+
+/* media */
+@media (max-width: 768px) {
+    .image-section {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .image-container {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        border-radius: 15px;
+    }
+
+    .navbar-toggler {
+        margin-left: 20px;
+        position: absolute;
+        right: 20px;
+    }
+}
+
+/* media */
+
+section {
+    padding: 2rem 9%;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--Very-Dark-Blue);
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+
+
+.heading h1 {
+    padding-bottom: 2rem;
+}
+
+
+.heading p {
+    max-width: 60rem;
+    margin: auto;
+    color: var(--Grayish-Blue);
+    font-size: 1.7rem;
+}
+
+
+.all-btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    background-color: var(--Soft-Blue);
+    border-radius: .5rem;
+    color: #fff;
+}
+
+.all-btn:hover {
+    background-color: transparent;
+    color: var(--Soft-Blue);
+    border: 2px solid var(--Soft-Blue);
+}
+
+
+:root {
+    --Soft-Blue: #623F14;
+    /* Updated to your color */
+    --Soft-Red: #623F14;
+    /* Updated to your color */
+    --Grayish-Blue: #623F14;
+    /* Updated to your color */
+    --Very-Dark-Blue: #623F14;
+    /* Updated to your color */
+    --box-shadow: .5rem .5rem 0 #623F14;
+    /* Updated to your color */
+    --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    /* You can keep this as it is for shadow */
+    --border: .2rem solid #623F14;
+    /* Updated to your color */
+}
+
+.special-section {
+    background-Image: "url('/img/KSA4.png')";
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    padding: 70px;
+    color: white;
+    text-emphasis-position: left;
+}
+
+/* Media Queries */
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+
+/* home section starts  */
+
+.home {
+    padding-top: 15rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* main property for responsiveness */
+    gap: 1.5rem;
+}
+
+
+.home .image {
+    flex: 1 1 45rem;
+}
+
+
+.home .image img {
+    width: 100%;
+    margin-top: 5rem;
+
+}
+
+
+.home .content {
+    flex: 1 1 45rem;
+}
+
+
+.home .content h1 {
+    font-size: 4.5rem;
+    padding-block-end: 1rem 0;
+    color: var(--Very-Dark-Blue);
+}
+
+.home .content p {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    max-width: 40rem;
+    color: var(--Grayish-Blue);
+    padding-bottom: 4rem;
+}
+
+.home .content .home-btn {
+    padding: 1.3rem 2rem;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.4rem;
+    box-shadow: .5rem .5rem hsl(231, 69%, 60%);
+    border: 2px solid var(--Soft-Blue);
+    border-radius: .5rem;
+}
+
+
+.home .content .home-btn:hover {
+    background-color: var(--Soft-Blue);
+    box-shadow: none;
+    color: #fff;
+}
+
+/* home section ends */
+
+/* Fonts section starts */
+
+.main {
+    font-size: 57px;
+    font-family: 'Amiri';
+    color: #623F14;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main2 {
+    font-size: 35px;
+    font-family: 'Amiri';
+    color: #B59A77;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main3 {
+    font-size: 25px;
+    font-family: 'Amiri';
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main4 {
+    font-size: 20px;
+    font-family: 'Amiri';
+    color: #B59A77;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main5 {
+    font-size: 40px;
+    font-family: 'Amiri';
+    color: #623F14;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main6 {
+    font-size: 15px;
+    font-family: 'Amiri';
+    color: #623F14;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Fonts section ends */
+
+
+
+/* footer section starts */
+.footer {
+    background-color: #e8ccac;
+    border-top: 2px solid #e8ccac;
+}
+
+/* footer section ends */
+
+.cta-button {
+    background: #8E724F;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: 'Amiri', sans-serif;
+    margin-left: 30px;
+}
+
+
+/* Buttons for slider left/right */
+.small-rounded-btn {
+    width: 35px;
+    height: 35px;
+}
+
+/* Slider container */
+#slider {
+    scroll-behavior: smooth;
+    max-width: 1120px;
+}
+
+/* Cards inside slider */
+.card-item {
+    min-width: 350px;
+}
+
+/* Footer text */
+.footer-text {
+    color: #623F14;
 }
