@@ -469,3 +469,23 @@ html {
 .footer-text {
     color: #623F14;
 }
+
+/* for buttons on the nav bar*/
+.nav-link-clickable {
+    cursor: pointer;
+}
+  
+
+/* Login-specific custom styles */
+.signup-link {
+    color: #623F14;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.login-redirect {
+    font-size: 14px;
+}

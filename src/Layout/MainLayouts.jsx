@@ -1,36 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const MainLayouts = ({ children }) => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null); // to track the logged-in user
+
+  // Listen for auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe(); // Clean up listener
+  }, []);
+
   return (
-    <div>
+    <div className="d-flex flex-column min-vh-100">
       {/* Header */}
       <header>
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid">
             <div className="row align-items-center w-100">
-              {/* Login Button */}
+              {/* Login or Username */}
               <div className="col-12 col-md-2 mt-2 mt-md-0">
-                <button className="cta-button">تسجيل دخول</button>
+                {user ? (
+                  <div className="d-flex gap-2">
+                    <button className="cta-button" disabled style={{ cursor: "default", fontSize: "14px" }}>
+                      أهلًا، {user.displayName?.split(' ')[0] || 'المستخدم'}
+                    </button>
+                    <button
+                      className="btn btn-sm px-3 py-2 border-0 bg-transparent d-flex align-items-center justify-content-center"
+                      onClick={() => signOut(auth)}
+                      title="تسجيل الخروج"
+                    >
+                      <i className="bi bi-box-arrow-left fs-5"></i>
+                    </button>
+
+
+
+
+                  </div>
+                ) : (
+                  <button className="cta-button mt-2" onClick={() => navigate('/login')}>
+                    تسجيل دخول
+                  </button>
+                )}
               </div>
 
               {/* Navigation Links */}
               <div className="col-8 col-md-8">
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                  <ul className="navbar-nav flex-row flex-wrap justify-content-center">
+                  <ul className="navbar-nav flex-row flex-wrap justify-content-center nav-link-clickable">
                     <li className="nav-item mx-2">
-                      <a className="nav-link active-page" href="#">من نحن</a>
+                      <a className="nav-link active-page">من نحن</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link" href="#">المفضلة</a>
+                      <a className="nav-link">المفضلة</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link" href="#">أمثالنا</a>
+                      <a className="nav-link">أمثالنا</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link" href="#">تاريخنا</a>
+                      <a className="nav-link">تاريخنا</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link" href="#">الرئيسية</a>
+                      <span className="nav-link" onClick={() => navigate('/')}>الرئيسية</span>
                     </li>
                   </ul>
                 </div>
@@ -48,7 +84,7 @@ const MainLayouts = ({ children }) => {
       </header>
 
       {/* Main Content */}
-      <main>{children}</main>
+      <main className="flex-grow-1">{children}</main>
 
       {/* Footer */}
       <footer className="footer mt-auto py-4">
