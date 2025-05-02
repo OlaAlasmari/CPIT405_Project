@@ -489,3 +489,63 @@ html {
 .login-redirect {
     font-size: 14px;
 }
+
+.custom-search {
+    background-color: #e8ccac;    
+    border: 2px solid #ccc;
+    border-radius: 20px;        
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    margin-right: 250px;
+  }
+  
+  .custom-search::placeholder {
+    color: #666;              
+  }
+  
+  .custom-search:focus {
+    border-color: #8d6e35;       
+    outline: none;
+    box-shadow: 0 0 5px rgba(163, 139, 95, 0.3);
+  }
+
+  .search-icon {
+    position: relative;
+    right: 480px;
+    top: 30%;
+    bottom: -9px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+    pointer-events: none;
+  }
+
+  .favorite-button {
+    background-color: #e8ccac; 
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    border-radius: 50%; 
+    position: absolute;
+    top: 0;
+    margin: -10px; 
+    left: 80px;  
+    top: 35px;
+
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+}
+
+.favorite-button i {
+    font-size: 20px; 
+}
+
+.story-card-image {
+    transition: transform 0.3s ease;
+}
+
+.story-card-image:hover {
+    transform: scale(1.05);
+}
