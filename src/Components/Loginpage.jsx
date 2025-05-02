@@ -1,49 +1,44 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // used to redirect the user after login
-import { signInWithEmailAndPassword } from 'firebase/auth'; // Firebase method for login
-import { auth } from '../firebase'; // our configured Firebase auth instance
-import AuthForm from './AuthForm'; // reusable form component
+import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth, googleProvider } from '../firebase';
+import AuthForm from './AuthForm';
 
-// Loginpage component
 const Loginpage = () => {
-const navigate = useNavigate(); // enables page redirection
-
-  // Input states for email and password
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  // State to store any error messages (e.g. wrong password)
   const [error, setError] = useState('');
 
-  // Function called when the login form is submitted
   const handleLogin = async (e) => {
-    e.preventDefault();     // Prevents the page from refreshing
-    setError('');           // Clears any previous errors
-
+    e.preventDefault();
+    setError('');
     try {
-      // Attempt to log in with email and password
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/'); // If successful, redirect to the homepage
+      navigate('/');
     } catch (err) {
-      // If login fails, show an error message
       setError('Email or password is incorrect.');
     }
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      navigate('/');
+    } catch (err) {
+      setError('فشل تسجيل الدخول عبر Google');
+    }
+  };
+
   return (
-    // Render the reusable AuthForm component and pass necessary props
     <AuthForm
       description={
         <>
-          {/* Description shown below the title */}
           خلك معنا.. ترى الدرب زين<br />
           <span className="main4">سوالف دروب وعلم ماله اثنين</span>
         </>
       }
-
-      onSubmit={handleLogin} // function to handle login on form submit
-
-      // Array of input fields (email and password) with their labels, types, values, and change handlers
+      onSubmit={handleLogin}
       fields={[
         {
           label: 'البريد الإلكتروني',
@@ -60,13 +55,31 @@ const navigate = useNavigate(); // enables page redirection
           onChange: (e) => setPassword(e.target.value),
         },
       ]}
+      submitText="تسجيل الدخول"
+      error={error}
+      redirectText="ليس لديك حساب؟"
+      redirectLinkText="أنشئ حسابًا الآن"
+      onRedirectClick={() => navigate('/signup')}
 
-      submitText="تسجيل الدخول" // Text for the submit button
-      error={error}              // Show error message if exists
-      redirectText="ليس لديك حساب؟"            // Text before the redirect link
-      redirectLinkText="أنشئ حسابًا الآن"      // Text that acts as a link
-      onRedirectClick={() => navigate('/signup')} // Go to signup page if user clicks the link
+      // Google button
+      extraButton={
+<button
+  onClick={handleGoogleLogin}
+  className="google-login-btn mt-3"
+>
+  <img
+    src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+    alt="Google icon"
+    width="20"
+    height="20"
+  />
+  <span className="fw-medium">تسجيل الدخول باستخدام Google</span>
+</button>
+
+      }
     />
   );
 };
+
 export default Loginpage;
+
