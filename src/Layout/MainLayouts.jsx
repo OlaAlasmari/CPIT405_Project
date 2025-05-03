@@ -60,7 +60,7 @@ const MainLayouts = ({ children }) => {
                       <a className="nav-link" onClick={() => navigate('/Favorites')}>المفضلة</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link">أمثالنا</a>
+                      <a className="nav-link" onClick={() => navigate('/Proverb')}>أمثالنا</a>
                     </li>
                     <li className="nav-item mx-2">
                       <a className="nav-link" onClick={() => navigate('/History')}>تاريخنا</a>
