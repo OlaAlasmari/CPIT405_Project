@@ -9,8 +9,6 @@ const Proverbs = ({ proverbs }) => {
     setCurrentIndex((prev) => (prev === proverbs.length - 1 ? 0 : prev + 1));
   };
 
-
-
   return (
     <section className="proverbs-section" style={{ position: 'absloute' }}>
       <h2 className="main2" style={{marginBottom:"50px"}}>

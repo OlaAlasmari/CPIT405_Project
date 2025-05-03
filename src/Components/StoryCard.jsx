@@ -1,31 +1,43 @@
 import React, { useState, useEffect } from 'react';
 
-const StoryCard = ({ image, title, description, showFavoriteButton = false }) => {
-  const [isFavorite, setIsFavorite] = useState(false);  // State to track if the story is marked as favorite
+const StoryCard = ({
+  image,
+  title,
+  description,
+  quote,
+  author,
+  showFavoriteButton = false,
+  children,
+}) => {
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  // On component mount or when the title changes, check if this story is already in favorites
   useEffect(() => {
-    const favs = JSON.parse(localStorage.getItem('favorites')) || []; // Retrieve favorites from localStorage
-    setIsFavorite(favs.some(story => story.title === title)); // Check if current story is in favorites
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setIsFavorite(favs.some(story => story.title === title));
   }, [title]);
 
-
-  // Toggle favorite status for the story
   const handleFavoriteToggle = () => {
     const favs = JSON.parse(localStorage.getItem('favorites')) || [];
     if (isFavorite) {
-      const updated = favs.filter(story => story.title !== title); // Remove the story from favorites if it's already added
+      const updated = favs.filter(story => story.title !== title);
       localStorage.setItem('favorites', JSON.stringify(updated));
       setIsFavorite(false);
     } else {
-      favs.push({ image, title, description }); // Add the story to favorites
+      favs.push({ image, title, description });
       localStorage.setItem('favorites', JSON.stringify(favs));
       setIsFavorite(true);
     }
   };
 
+  const isQuoteCard = quote !== undefined || author !== undefined;
+
   return (
-    <div className="card-min-width text-center card-item position-relative">
+    <div
+      className={`card-min-width text-center card-item position-relative p-4 w-100 ${
+        isQuoteCard ? 'main-proverb-card' : ''
+      }`}
+      style={{ maxWidth: '800px' }}
+    >
       {showFavoriteButton && (
         <button
           className="favorite-button"
@@ -35,21 +47,30 @@ const StoryCard = ({ image, title, description, showFavoriteButton = false }) =>
           <i className={`fas fa-heart ${isFavorite ? 'text-danger' : 'text-secondary'}`}></i>
         </button>
       )}
-      <img src={image} alt={title} className="img-fluid rounded-4" />
-      <br /><br />
-      <p className="main4">{title}</p>
-      <p className="main6">{description}</p>
+
+      {children ? (
+        children
+      ) : isQuoteCard ? (
+        <>
+          <h2 className="main2">{title}</h2>
+          <p className="main7">{quote}</p>
+          <p className="main">{author}</p>
+        </>
+      ) : (
+        <>
+          <img src={image} alt={title} className="img-fluid rounded-4" />
+          <br /><br />
+          <p className="main4">{title}</p>
+          <p className="main6">{description}</p>
+        </>
+      )}
     </div>
   );
 };
 
 export default StoryCard;
 
-
-
 //import React from 'react';
-
-
 //const StoryCard = (props) => {//child
   //const handleFavorite = () => {
     //if (props.onFavorite) {

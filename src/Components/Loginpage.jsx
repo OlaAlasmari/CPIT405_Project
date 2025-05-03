@@ -75,8 +75,7 @@ const Loginpage = () => {
   />
   <span className="fw-medium">تسجيل الدخول باستخدام Google</span>
 </button>
-
-      }
+}
     />
   );
 };

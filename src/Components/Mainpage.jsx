@@ -1,14 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import StoryCard from './StoryCard'; // Adjust the path if needed
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Mainpage = () => {
+  const [stories, setStories] = useState([]);
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration
       once: true,     // only animate once
     });
+
+    // Fetch the stories from the backend API
+    fetch('http://localhost/getStories.php')
+      .then(res => res.json())
+      .then(data => setStories(data))
+      .catch(err => console.error('فشل في تحميل القصص:', err));
   }, []);
 
   const scrollSlider = (direction) => {
@@ -55,26 +63,14 @@ const Mainpage = () => {
             </button>
 
             <div id="slider" className="d-flex gap-5 flex-nowrap custom-scroll">
-              <StoryCard
-                image="/img/p1.png"
-                title="قصر المصمك"
-                description="حصن طيني عريق يقع وسط الرياض، بُني في أواخر القرن 19م"
-              />
-              <StoryCard
-                image="/img/p2.png"
-                title="مدائن صالح"
-                description="موقع أثري في محافظة العُلا، يعود لحضارة الأنباط"
-              />
-              <StoryCard
-                image="/img/p3.png"
-                title="مدينة الدرعية"
-                description="مدينة تاريخية تقع شمال غرب الرياض، وتُعد مهد الدولة السعودية الأولى"
-              />
-              <StoryCard
-                image="/img/p4.png"
-                title="جدة التاريخية"
-                description="منطقة قديمة تقع في قلب جدة. تشتهر بمبانيها الحجرية المزينة بالنوافذ الخشبية (الرواشين) وأسواقها الشعبية"
-              />
+              {stories.slice(0, 4).map((story, index) => (
+                <StoryCard
+                  key={index}
+                  image={story.image}
+                  title={story.title}
+                  description={story.description}
+                />
+              ))}
             </div>
 
             <button className="btn custom-btn rounded-circle small-rounded-btn" onClick={() => scrollSlider(1)}>
@@ -110,7 +106,7 @@ const Mainpage = () => {
             </div>
 
             <div className="col-md-6 image" data-aos="fade-left">
-              <img src="\img\kinga1.png" alt="illustration-hero" className="img-fluid" />
+              <img src="/img/kinga1.png" alt="illustration-hero" className="img-fluid" />
             </div>
           </div>
         </div>
@@ -118,4 +114,5 @@ const Mainpage = () => {
     </div>
   );
 };
+
 export default Mainpage;
