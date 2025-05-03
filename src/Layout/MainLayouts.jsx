@@ -57,13 +57,13 @@ const MainLayouts = ({ children }) => {
                       <a className="nav-link">من نحن</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link">المفضلة</a>
+                      <a className="nav-link" onClick={() => navigate('/Favorites')}>المفضلة</a>
                     </li>
                     <li className="nav-item mx-2">
                       <a className="nav-link">أمثالنا</a>
                     </li>
                     <li className="nav-item mx-2">
-                      <a className="nav-link">تاريخنا</a>
+                      <a className="nav-link" onClick={() => navigate('/History')}>تاريخنا</a>
                     </li>
                     <li className="nav-item mx-2">
                       <span className="nav-link" onClick={() => navigate('/')}>الرئيسية</span>

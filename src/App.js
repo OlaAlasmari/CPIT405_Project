@@ -6,7 +6,8 @@ import Mainpage from './Components/Mainpage';
 import MainLayouts from './Layout/MainLayouts';
 import Signup from './Components/Signup';
 import Loginpage from './Components/Loginpage';
-
+import History from './Components/History';
+import Favorites from './Components/Favorites';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -20,6 +21,8 @@ function App() {
             <Route path="/" element={<Mainpage />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Loginpage />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </MainLayouts>
       </BrowserRouter>
