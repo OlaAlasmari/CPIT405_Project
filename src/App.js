@@ -9,6 +9,7 @@ import Loginpage from './Components/Loginpage';
 import History from './Components/History';
 import Favorites from './Components/Favorites';
 import ProverbsPage from './Components/ProverbsPage';
+import AboutUs from './Components/AboutUs';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/history" element={<History />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/Proverb" element={<ProverbsPage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
           </Routes>
         </MainLayouts>
       </BrowserRouter>

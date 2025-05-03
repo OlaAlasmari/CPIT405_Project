@@ -684,3 +684,103 @@ html {
     /* Because the text is Arabic */
 
 }
+
+/* About Us Section */
+.about-us-page {
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    color: #623F14;
+    font-family: 'Amiri', sans-serif; /* استخدم خط الشريط الرئيسي */
+}
+
+/* زيادة تدوير حواف الصناديق البيضاء */
+.about-us-page .bg-light.rounded {
+    border-radius: 2rem !important;
+}
+
+.about-us-page h1,
+.about-us-page h2,
+.about-us-page h4,
+.about-us-page p {
+    font-family: 'Amiri', sans-serif; /* تطابق مع الشريط الرئيسي */
+}
+
+.about-us-page h1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:  #D2B898;
+}
+
+
+  .about-us-page p.text-muted {
+    font-size: 2rem;
+    line-height: 1.8;
+    color: #4a3b28;
+    font-family: 'Amiri', sans-serif;
+  }
+  
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .about-us-page {
+        padding: 20px;
+    }
+}
+.about-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 1.5rem;
+  margin-bottom: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.about-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 1.5rem;
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .about-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .about-us-page h2 {
+    font-weight: bold;
+  }
+  
+  .about-us-page section {
+  margin-bottom: 4rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  padding: 30px;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.about-us-page section:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-page img {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .about-us-page img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  

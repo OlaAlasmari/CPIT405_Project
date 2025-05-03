@@ -54,7 +54,7 @@ const MainLayouts = ({ children }) => {
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                   <ul className="navbar-nav flex-row flex-wrap justify-content-center nav-link-clickable">
                     <li className="nav-item mx-2">
-                      <a className="nav-link">من نحن</a>
+                    <a className="nav-link" onClick={() => navigate('/AboutUs')}>من نحن</a>
                     </li>
                     <li className="nav-item mx-2">
                       <a className="nav-link" onClick={() => navigate('/Favorites')}>المفضلة</a>
