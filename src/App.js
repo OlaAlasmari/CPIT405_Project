@@ -12,6 +12,7 @@ import ProverbsPage from './Components/ProverbsPage';
 import AboutUs from './Components/AboutUs';
 import MapSearch from './Components/MapSearch';
 
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -29,6 +30,8 @@ function App() {
             <Route path="/Proverb" element={<ProverbsPage />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/map" element={<MapSearch />} />
+
+            
           </Routes>
 
         </MainLayouts>

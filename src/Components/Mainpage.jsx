@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import StoryCard from './StoryCard'; // Adjust the path if needed
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
+import SubmitButton from './SubmitButton';
+
 
 const Mainpage = () => {
   const [stories, setStories] = useState([]);
@@ -25,7 +28,10 @@ const Mainpage = () => {
     if (slider) {
       slider.scrollLeft += direction * scrollAmount;
     }
+
   };
+  const navigate = useNavigate();
+
 
   return (
     <div>
@@ -42,7 +48,13 @@ const Mainpage = () => {
               <p className="main3 mt-5">نقدّم لك مكتبة من القصص والحكايا التراثية التي تنبض بروح السعودية وتروي سيرة الأولين</p>
               <p className="main3 mt-5">! بإمكانك قراءتها، وحفظها في مفضّلتك</p>
               <div className="mt-5">
-                <button className="cta-button">ابدأ الاستكشاف</button>
+
+ 
+                <div className="d-flex justify-content-center">
+                   <SubmitButton text="ابدأ الاستكشاف"onClick={() => navigate('/History')} />
+                 </div>
+
+
               </div>
             </div>
           </div>

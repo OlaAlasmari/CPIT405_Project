@@ -1,74 +1,60 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import StoryCard from './StoryCard';
 
 const AboutUs = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
-        
+
     }, []);
 
     return (
-        <div className="about-us-page" style={{ direction: 'rtl' }}>
-          
-            <section className="mb-5" data-aos="fade-up">
-                <div className="bg-light rounded shadow p-4">
-                    <div className="row align-items-center">
-                      
-                        <div className="col-md-6 text-end">
-                            <h1 className="mb-3">ما هو سعوديولوجي؟</h1>
-                            <h4 className="mb-2"></h4>
-                            <p className="text-muted">
-                                نحن منصة تهتم برواية القصص والهوية الثقافية السعودية بأسلوب عصري.
-                            </p>
-                        </div>
 
-                     
-                        <div className="col-md-6 text-center">
-                            <img
-                                src="/img/aboutUs.jpg"
-                                alt="سعوديولوجي"
-                                className="img-fluid"
-                                style={{ maxWidth: '100%' }}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div className="row align-items-center">
+            {/* Text on the left */}
+            <div className="col-md-5 proverb-card-left" style={{ marginTop: '80px' }}>
+                <h1 className="main2">"ما هو سعوديولوجي؟"</h1>
+                <h1 className="main7" style={{ marginTop: '2em' }}>
+                    نحن منصة تهتم برواية القصص والهوية الثقافية السعودية، ونسعى لتقديمها بأسلوب عصري يجمع بين أصالة الماضي وروح الحاضر، لننقل إرثنا الثقافي للأجيال القادمة بطريقة ملهمة ومبتكرة
+                </h1>
+            </div>
 
+            {/* Image on the right */}
+            <div className="col-md-6 text-center">
+                <img
+                    src="/img/aboutUs.jpg"
+                    alt="سعوديولوجي"
+                    className="about-image"
+                />
+            </div>
             {/* رسالتنا */}
-            <section className="mb-5" data-aos="fade-up">
-                <h1 className="text-center mb-3">رسالتنا</h1>
-                <div
-                    className="bg-light rounded shadow p-4 text-center mx-auto"
-                    style={{ maxWidth: '600px' }}
-                >
-                    <p className="mb-0 text-muted">
-                        نسعى لتعزيز الانتماء من خلال تسليط الضوء على القصص المحلية والثقافة السعودية.
-                    </p>
-                </div>
-            </section>
+            <section className="mb" data-aos="fade-up">
+                <StoryCard
+                    title="رسالتـنا"
+                    quote="نسعى لتعزيز الانتماء من خلال تسليط الضوء على القصص المحلية والثقافة السعودية"
+                    author=""
+                />
 
-            
+            </section>
             <section className="mb-5" data-aos="fade-up">
-                <h1 className="text-center mb-4">أهدافنا</h1>
-                <div className="row justify-content-center text-center g-4">
-                    <div className="col-6 col-md-4">
-                        <div className="bg-light rounded shadow p-3">
-                            <p className="mb-0 text-muted">الاعتزاز بالهوية السعودية</p>
+                <div className="container"> {/* ADD THIS LINE */}
+                    <div className="row justify-content-center text-center g-4">
+                        <h1 className="main2">أهدافنا</h1>
+
+                        <div className="col-6 col-md-4">
+                            <StoryCard quote="الاعتزاز بالهوية السعودية" author="" />
+                        </div>
+
+                        <div className="col-6 col-md-4">
+                            <StoryCard quote="الحفاظ على الموروث الثقافي" author="" />
+                        </div>
+
+                        <div className="col-6 col-md-4">
+                            <StoryCard quote="مواكبة التطورات الثقافية" author="" />
                         </div>
                     </div>
-                    <div className="col-6 col-md-4">
-                        <div className="bg-light rounded shadow p-3">
-                            <p className="mb-0 text-muted">الحفاظ على الموروث الثقافي</p>
-                        </div>
-                    </div>
-                    <div className="col-6 col-md-4">
-                        <div className="bg-light rounded shadow p-3">
-                            <p className="mb-0 text-muted">مواكبة التطورات الثقافية</p>
-                        </div>
-                    </div>
-                </div>
+                </div> {/* CLOSE CONTAINER */}
             </section>
         </div>
     );

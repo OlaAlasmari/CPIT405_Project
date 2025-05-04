@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import SubmitButton from '../Components/SubmitButton'; // adjust path if needed
 
 const MainLayouts = ({ children }) => {
   const navigate = useNavigate();
@@ -43,9 +44,12 @@ const MainLayouts = ({ children }) => {
 
                   </div>
                 ) : (
-                  <button className="cta-button mt-2" onClick={() => navigate('/login')}>
-                    تسجيل دخول
-                  </button>
+                 
+                  <div className="d-flex justify-content-center">
+                   <SubmitButton text="تسجيل الدخول"onClick={() => navigate('/login')} />
+                 </div>
+
+
                 )}
               </div>
 

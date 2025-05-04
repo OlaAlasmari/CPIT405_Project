@@ -1,4 +1,6 @@
 import React from 'react';
+import SubmitButton from './SubmitButton';
+
 const AuthForm = ({
   title,
   description,
@@ -36,11 +38,10 @@ const AuthForm = ({
               ))}
 
               {error && <p className="text-danger text-end">{error}</p>}
-
+              
+              
               <div className="d-flex justify-content-center">
-                <button type="submit" className="cta-button px-5">
-                  {submitText}
-                </button>
+                <SubmitButton text={submitText} />
               </div>
             </form>
 
