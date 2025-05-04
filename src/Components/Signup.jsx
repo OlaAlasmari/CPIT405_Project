@@ -4,7 +4,7 @@ import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from './AuthForm';
 
-  const Signup = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,12 +25,6 @@ import AuthForm from './AuthForm';
 
   return (
     <AuthForm
-      description={
-        <>
-          خلك معنا.. ترى الدرب زين<br />
-          <span className="main4">سوالف دروب وعلم ماله اثنين</span>
-        </>
-      }
       onSubmit={handleSignup}
       fields={[
         {
@@ -57,11 +51,12 @@ import AuthForm from './AuthForm';
       ]}
       submitText="إنشاء حساب"
       error={error}
-      redirectText="لديك حساب؟"
-      redirectLinkText="تسجيل الدخول"
-      onRedirectClick={() => navigate('/login')}
+      redirect={{
+        text: 'لديك حساب؟',
+        linkText: 'تسجيل الدخول',
+        onClick: () => navigate('/login'),
+      }}
     />
   );
 };
 export default Signup;
-
