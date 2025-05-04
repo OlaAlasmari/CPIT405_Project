@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase';
 import AuthForm from './AuthForm';
 
@@ -20,7 +20,6 @@ const Loginpage = () => {
       setError('Email or password is incorrect.');
     }
   };
-
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
@@ -29,16 +28,8 @@ const Loginpage = () => {
       setError('فشل تسجيل الدخول عبر Google');
     }
   };
-
   return (
-    <AuthForm
-      description={
-        <>
-          خلك معنا.. ترى الدرب زين<br />
-          <span className="main4">سوالف دروب وعلم ماله اثنين</span>
-        </>
-      }
-      onSubmit={handleLogin}
+    <AuthForm onSubmit={handleLogin}
       fields={[
         {
           label: 'البريد الإلكتروني',
@@ -57,28 +48,27 @@ const Loginpage = () => {
       ]}
       submitText="تسجيل الدخول"
       error={error}
-      redirectText="ليس لديك حساب؟"
-      redirectLinkText="أنشئ حسابًا الآن"
-      onRedirectClick={() => navigate('/signup')}
-
-      // Google button
+      redirect={{
+        text: 'ليس لديك حساب؟',
+        linkText: 'أنشئ حسابًا الآن',
+        onClick: () => navigate('/signup'),
+      }}
       extraButton={
-<button
-  onClick={handleGoogleLogin}
-  className="google-login-btn mt-3"
->
-  <img
-    src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-    alt="Google icon"
-    width="20"
-    height="20"
-  />
-  <span className="fw-medium">تسجيل الدخول باستخدام Google</span>
-</button>
-}
+        <button onClick={handleGoogleLogin} className="google-login-btn mt-3">
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google icon"
+            width="20"
+            height="20"
+          />
+          <span className="fw-medium">تسجيل الدخول باستخدام Google</span>
+        </button>
+      }
     />
   );
 };
-
 export default Loginpage;
+
+
+
 
