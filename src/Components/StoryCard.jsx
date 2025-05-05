@@ -32,43 +32,51 @@ const StoryCard = ({
   const isQuoteCard = quote !== undefined || author !== undefined;
 
   return (
-    <div
-      className={`card-min-width text-center card-item position-relative p-4 w-100 ${
-        isQuoteCard ? 'main-proverb-card' : ''
-      }`}
-      style={{ maxWidth: '800px' }}
-    >
-      {showFavoriteButton && (
-        <button
-          className="favorite-button"
-          onClick={handleFavoriteToggle}
-          aria-label="إضافة إلى المفضلة"
-        >
-          <i className={`fas fa-heart ${isFavorite ? 'text-danger' : 'text-secondary'}`}></i>
-        </button>
-      )}
+<div
+  className={`card-min-width text-center card-item p-4 w-100 ${
+    isQuoteCard ? 'main-proverb-card' : ''
+  }`}
+  style={{ maxWidth: '800px' }}
+>
+  {children ? (
+    children
+  ) : isQuoteCard ? (
+    <>
+      <h2 className="main2">{title}</h2>
+      <p className="main7">{quote}</p>
+      <p className="main">{author}</p>
+    </>
+  ) : (
+    <>
+      <div className="position-relative">
+        {showFavoriteButton && (
+          <button
+            className="favorite-button"
+            onClick={(e) => {
+              e.stopPropagation(); // عشان ما يضغط الخريطة بالغلط
+              handleFavoriteToggle();
+            }}
+            aria-label="إضافة إلى المفضلة"
+          >
+            <i className={`fas fa-heart ${isFavorite ? 'text-danger' : 'text-secondary'}`}></i>
+          </button>
+        )}
+        <img src={image} alt={title} className="img-fluid rounded-4" />
+      </div>
+      <br /><br />
+      <p className="main4">{title}</p>
+      <p className="main6">{description}</p>
+    </>
+  )}
+</div>
 
-      {children ? (
-        children
-      ) : isQuoteCard ? (
-        <>
-          <h2 className="main2">{title}</h2>
-          <p className="main7">{quote}</p>
-          <p className="main">{author}</p>
-        </>
-      ) : (
-        <>
-          <img src={image} alt={title} className="img-fluid rounded-4" />
-          <br /><br />
-          <p className="main4">{title}</p>
-          <p className="main6">{description}</p>
-        </>
-      )}
-    </div>
   );
 };
-
 export default StoryCard;
+
+
+
+
 
 //import React from 'react';
 //const StoryCard = (props) => {//child

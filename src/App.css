@@ -282,13 +282,9 @@ html {
     --Grayish-Blue: #623F14;
     /* Updated to your color */
     --Very-Dark-Blue: #623F14;
-    /* Updated to your color */
     --box-shadow: .5rem .5rem 0 #623F14;
-    /* Updated to your color */
     --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
-    /* You can keep this as it is for shadow */
     --border: .2rem solid #623F14;
-    /* Updated to your color */
 }
 
 .special-section {
@@ -536,18 +532,20 @@ html {
     padding: 5px;
     border-radius: 50%;
     position: absolute;
-    top: 0;
-    margin-bottom: -5px;
-    left: 80px;
-    top: 35px;
+    top: 20px;         
+    right: 30px;      
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.favorite-button i {
+    z-index: 10;
+  }
+  
+  
+  
+  .favorite-button i {
     font-size: 20px;
-}
+  }
+  
 
 .story-card-image {
     transition: transform 0.3s ease;
