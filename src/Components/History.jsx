@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const History = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [stories, setStories] = useState([]); // ← بدل الثابت
+    const [stories, setStories] = useState([]); 
     const [favorites, setFavorites] = useState([]);
     const navigate = useNavigate();
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import StoryCard from './StoryCard'; // Adjust the path if needed
+import StoryCard from './StoryCard'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
@@ -11,8 +11,8 @@ const Mainpage = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation duration
-      once: true,     // only animate once
+      duration: 1000, 
+      once: true,    
     });
 
     // Fetch the stories from the backend API
@@ -35,7 +35,6 @@ const Mainpage = () => {
 
   return (
     <div>
-      {/* Hero Section with background */}
       <section className="hero-section">
         <div
           className="special-section"
@@ -48,8 +47,6 @@ const Mainpage = () => {
               <p className="main3 mt-5">نقدّم لك مكتبة من القصص والحكايا التراثية التي تنبض بروح السعودية وتروي سيرة الأولين</p>
               <p className="main3 mt-5">! بإمكانك قراءتها، وحفظها في مفضّلتك</p>
               <div className="mt-5">
-
- 
                 <div className="d-flex justify-content-center">
                    <SubmitButton text="ابدأ الاستكشاف"onClick={() => navigate('/History')} />
                  </div>
@@ -59,15 +56,12 @@ const Mainpage = () => {
             </div>
           </div>
         </div>
-
-        {/* Section Title */}
         <div className="row my-5">
           <div className="col text-center">
             <p className="main5">أشهر القصص</p>
           </div>
         </div>
 
-        {/* Cards Slider */}
         <div className="container text-center my-5">
           <div className="d-flex justify-content-center align-items-center gap-3 my-4">
             <button className="btn custom-btn rounded-circle small-rounded-btn" onClick={() => scrollSlider(-1)}>

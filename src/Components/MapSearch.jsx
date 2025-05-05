@@ -13,7 +13,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-// مكون لتحديث موقع الخريطة عند تغيير الإحداثيات
 const ChangeMapView = ({ coords }) => {
   const map = useMap();
   useEffect(() => {
@@ -28,14 +27,12 @@ const MapSearch = () => {
   const [searchTerm, setSearchTerm] = useState(defaultTerm);
   const [position, setPosition] = useState([24.7136, 46.6753]); // الرياض كموقع افتراضي
 
-  // البحث مباشرة عند استقبال الموقع من صفحة History
   useEffect(() => {
     if (defaultTerm) {
       handleSearch(defaultTerm);
     }
   }, [defaultTerm]);
 
-  // دالة البحث باستخدام Nominatim API
   const handleSearch = async (term = searchTerm) => {
     if (!term) return;
     try {

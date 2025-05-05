@@ -20,8 +20,6 @@ body {
     margin: 0;
 }
 
-
-/* Nav section starts */
 .navbar {
     padding: 10px 50px;
     display: flex;
@@ -82,8 +80,6 @@ body {
     }
 }
 
-/* Nav section ends */
-/* Top Section */
 .hero-section {
     background-color: transparent;
     margin-top: 30px;
@@ -97,7 +93,6 @@ body {
     min-width: 350px;
 }
 
-/* Main Card */
 .hero-card {
     background-color: #e9e7e7;
     border-radius: 20px;
@@ -109,7 +104,6 @@ body {
     font-size: 13px;
 }
 
-/* Inside Card Layout */
 .hero-content {
     display: flex;
     align-items: center;
@@ -149,7 +143,6 @@ body {
     background-color: #D2B898;
     /* Fill green on hover */
     color: white;
-    /* Make icon/text white on hover */
 }
 
 @media (min-width: 769px) {
@@ -276,11 +269,8 @@ html {
 
 :root {
     --Soft-Blue: #623F14;
-    /* Updated to your color */
     --Soft-Red: #623F14;
-    /* Updated to your color */
     --Grayish-Blue: #623F14;
-    /* Updated to your color */
     --Very-Dark-Blue: #623F14;
     --box-shadow: .5rem .5rem 0 #623F14;
     --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
@@ -299,16 +289,13 @@ html {
 }
 
 /* Media Queries */
-
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
 }
 
-
 /* home section starts  */
-
 .home {
     padding-top: 15rem;
     display: flex;
@@ -322,26 +309,19 @@ html {
 .home .image {
     flex: 1 1 45rem;
 }
-
-
 .home .image img {
     width: 100%;
     margin-top: 5rem;
 
 }
-
-
 .home .content {
     flex: 1 1 45rem;
 }
-
-
 .home .content h1 {
     font-size: 4.5rem;
     padding-block-end: 1rem 0;
     color: var(--Very-Dark-Blue);
 }
-
 .home .content p {
     font-size: 1.7rem;
     padding: 1rem 0;
@@ -349,7 +329,6 @@ html {
     color: var(--Grayish-Blue);
     padding-bottom: 4rem;
 }
-
 .home .content .home-btn {
     padding: 1.3rem 2rem;
     background-color: #fff;
@@ -359,17 +338,12 @@ html {
     border: 2px solid var(--Soft-Blue);
     border-radius: .5rem;
 }
-
-
 .home .content .home-btn:hover {
     background-color: var(--Soft-Blue);
     box-shadow: none;
     color: #fff;
 }
 
-/* home section ends */
-
-/* Fonts section starts */
 
 .main {
     font-size: 57px;
@@ -427,17 +401,10 @@ html {
     font-weight: bold;
 }
 
-/* Fonts section ends */
-
-
-
-/* footer section starts */
 .footer {
     background-color: #e8ccac;
     border-top: 2px solid #e8ccac;
 }
-
-/* footer section ends */
 
 .cta-button {
     background: #8E724F;
@@ -450,7 +417,6 @@ html {
     font-family: 'Amiri', sans-serif;
     margin-left: 30px;
 }
-
 
 /* Buttons for slider left/right */
 .small-rounded-btn {
@@ -539,10 +505,7 @@ html {
     justify-content: center;
     z-index: 10;
   }
-  
-  
-  
-  .favorite-button i {
+.favorite-button i {
     font-size: 20px;
   }
   
@@ -576,9 +539,6 @@ html {
     background-color: #f7f7f7;
 }
 
-
-
-
 /*proverbs section */
 .proverb-card-left {
     position: relative;
@@ -607,15 +567,11 @@ html {
 
 .left-arrow {
     left: -40px;
-    /* adjust as needed */
 }
 
 .right-arrow {
     right: -360px;
 }
-
-
-
 
 /*image*/
 .image-container-small {
@@ -632,19 +588,16 @@ html {
 
 
 }
-
 .proverb-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
 }
-
 .text-container {
     padding: 20px;
 
 }
-
 /* main Card*/
 .main-proverb-card {
     background-color: transparent;
@@ -657,7 +610,7 @@ html {
     height: 250px;
     margin: 100px auto 20px auto;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    /* Optional: soft shadow */
+    /* soft shadow */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
