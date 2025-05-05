@@ -1,7 +1,7 @@
-# audiOlogy - Interactive Platform to Preserve Saudi Heritage
+# SaudiOlogy - Interactive Platform to Preserve Saudi Heritage
 
 ## Overview
-audiOlogy is an interactive web platform dedicated to preserving and showcasing the cultural heritage and history of Saudi Arabia. It enables users to explore curated collections of historical stories, traditional proverbs, and cultural landmarks in both Arabic and English.
+SaudiOlogy is an interactive web platform dedicated to preserving and showcasing the cultural heritage and history of Saudi Arabia. It enables users to explore curated collections of historical stories, traditional proverbs, and cultural landmarks in both Arabic and English.
 
 ## What the Project Does
 - Presents curated historical stories and key cultural personalities.
@@ -47,23 +47,23 @@ The project is maintained and developed by:
 ## Screenshots
 
 ### Home Page
-![Home Page](./screenshots/mainPage.png)
+![Home Page](./screenshots/mainPage.jpg)
 
 ### Proverbs Page
-![Map Page](./screenshots/map.png)
+![Map Page](./screenshots/map.jpg)
 
 ### Proverbs Page
-![Proverbs Page](./screenshots/proverbs.png)
-![Proverbs Page](./screenshots/proverbs2.png)
+![Proverbs Page](./screenshots/proverbs.jpg)
+![Proverbs Page](./screenshots/proverbs2.jpg)
 
 ### Favorites Page
 ![Favorites Page](./screenshots/fav.png)
  
 ### SignUp Page
-![SignUp Page](./screenshots/SignUp.png)
+![SignUp Page](./screenshots/SignUp.jpg)
 
 ### SignIn Page
-![SignIn Page](./screenshots/SignIn.png)
+![SignIn Page](./screenshots/SignIn.jpg)
 
 ---
 # Getting Started with Create React App
