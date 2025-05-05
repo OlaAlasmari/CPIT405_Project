@@ -50,20 +50,22 @@ The project is maintained and developed by:
 ![Home Page](./screenshots/mainPage.jpg)
 
 ### Proverbs Page
-![Map Page](./screenshots/map.jpg)
-
-### Proverbs Page
 ![Proverbs Page](./screenshots/proverbs.jpg)
-![Proverbs Page](./screenshots/proverbs2.jpg)
+
+### Proverbs2 Page
+![Proverbs2 Page](./screenshots/proverbs2.jpg)
 
 ### Favorites Page
 ![Favorites Page](./screenshots/fav.png)
  
 ### SignUp Page
-![SignUp Page](./screenshots/SignUp.jpg)
+![SignUp Page](./screenshots/signUp.jpg)
 
 ### SignIn Page
-![SignIn Page](./screenshots/SignIn.jpg)
+![SignIn Page](./screenshots/signIn.jpg)
+
+### aboutUs Page
+![aboutUs Page](./screenshots/aboutUs.jpg)
 
 ---
 # Getting Started with Create React App
