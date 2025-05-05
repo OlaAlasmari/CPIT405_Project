@@ -1,22 +1,22 @@
 # SaudiOlogy - Interactive Platform to Preserve Saudi Heritage
 
 ## Overview
-SaudiOlogy is an interactive web platform dedicated to preserving and showcasing the cultural heritage and history of Saudi Arabia. It enables users to explore curated collections of historical stories, traditional proverbs, and cultural landmarks in both Arabic and English.
+SaudiOlogy is an interactive web platform dedicated to preserving and showcasing the cultural heritage and history of Saudi Arabia. It enables users to explore curated collections of historical stories, traditional proverbs, and cultural landmarks in Arabic.
 
 ## What the Project Does
-- Presents curated historical stories and key cultural personalities.
+- Presents curated historical stories and archaeological sites.
 - Explains the significance and origins of traditional Saudi proverbs.
 - Uses interactive maps to locate and explore cultural landmarks.
 - Allows users to bookmark their favorite stories.
 
 ## Why the Project is Useful
-audiOlogy serves as a digital gateway to Saudi Arabia’s living history. It helps users, researchers, and culture enthusiasts to connect with the rich heritage of Saudi Arabia and contributes to preserving cultural knowledge for future generations. The platform provides educational content in an accessible and engaging format.
+SaudiOlogy serves as a digital gateway to Saudi Arabia’s living history. It helps users, researchers, and culture enthusiasts to connect with the rich heritage of Saudi Arabia and contributes to preserving cultural knowledge for future generations. The platform provides educational content in an accessible and engaging format.
 
 ## How Users Can Get Started with the Project
 1. Visit the platform and create an account using your email.
 2. Log in to access and explore stories, proverbs, and landmarks.
 3. Use the interactive map to discover cultural sites.
-4. Bookmark your favorite stories and proverbs for quick access.
+4. Bookmark your favorite stories for quick access.
 
 
 
@@ -30,10 +30,10 @@ The project is maintained and developed by:
 ---
 
 ## Features
-- Curated historical stories and cultural personalities.
-- Traditional Saudi proverbs with detailed explanations.
+- Selected historical stories and archaeological sites.
+- Popular Saudi proverbs with detailed explanations.
 - Interactive map integration using Google Maps.
-- Favorite system to bookmark stories and proverbs.
+- Favorites feature for saving stories.
 
 
 
