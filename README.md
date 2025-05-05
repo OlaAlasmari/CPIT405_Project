@@ -59,7 +59,7 @@ The project is maintained and developed by:
 ![SignIn Page](./screenshots/signIn.jpg)
 
 ### aboutUs Page
-![aboutUs Page](./screenshots/aboutUspic.png)
+![aboutUs Page](./screenshots/about.png)
 
 ---
 # Getting Started with Create React App
