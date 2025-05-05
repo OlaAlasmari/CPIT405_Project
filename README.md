@@ -50,10 +50,10 @@ The project is maintained and developed by:
 ![Home Page](./screenshots/mainPage.jpg)
 
 ### Proverbs Page
-![Proverbs Page](./screenshots/proverbs.jpg)
+![Proverbs Page](./screenshots/Proverbs.jpg)
 
 ### Proverbs2 Page
-![Proverbs2 Page](./screenshots/proverbs2.jpg)
+![Proverbs2 Page](./screenshots/Proverbs2.jpg)
 
 ### Favorites Page
 ![Favorites Page](./screenshots/fav.png)
@@ -65,7 +65,7 @@ The project is maintained and developed by:
 ![SignIn Page](./screenshots/signIn.jpg)
 
 ### aboutUs Page
-![aboutUs Page](./screenshots/aboutUs.jpg)
+![aboutUs Page](./screenshots/aboutUspic.jpg)
 
 ---
 # Getting Started with Create React App
