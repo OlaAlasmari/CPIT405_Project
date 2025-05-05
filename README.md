@@ -17,12 +17,8 @@ audiOlogy serves as a digital gateway to Saudi Arabia’s living history. It hel
 2. Log in to access and explore stories, proverbs, and landmarks.
 3. Use the interactive map to discover cultural sites.
 4. Bookmark your favorite stories and proverbs for quick access.
-5. Switch between Arabic and English as preferred.
 
-## Where Users Can Get Help with the Project
-- Users can visit the "About Us" page on the platform for contact information.
-- A contact form is available for inquiries and feedback.
-- Newsletter subscription is available for updates and announcements.
+
 
 ## Who Maintains and Contributes to the Project
 The project is maintained and developed by:
@@ -38,10 +34,8 @@ The project is maintained and developed by:
 - Traditional Saudi proverbs with detailed explanations.
 - Interactive map integration using Google Maps.
 - Favorite system to bookmark stories and proverbs.
-- Bilingual support (Arabic and English).
-- Audio narration for stories and proverbs.
-- Geo-location notifications when near landmarks.
-- Offline mode to access saved stories without internet.
+
+
 
 ---
 ## Screenshots
